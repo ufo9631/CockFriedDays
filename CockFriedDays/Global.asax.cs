@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CockFriedDays.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,7 @@ namespace CockFriedDays
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            ApplicationStart.Dependency();
         }
     }
 }
