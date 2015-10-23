@@ -13,7 +13,7 @@ namespace CockFriedDays.Controllers
         public UsersController(IBLL.IUsersBLL  _UsersBLL)
         {
             UsersBLL = _UsersBLL;
-        }
+        } 
         // GET: Users
         public ActionResult Index()
         {
