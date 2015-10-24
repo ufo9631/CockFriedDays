@@ -7,31 +7,22 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Users: BaseModel
+    /// <summary>
+    /// 用户登录信息表
+    /// </summary>
+    public class Users : BaseModel
     {
         /// <summary>
         /// 用户登录名
         /// </summary>
-       public string UserCode { get; set; }
+        public string LoginCode { get; set; }
         /// <summary>
         /// 密码
         /// </summary>
-        public string PassWord { get; set; }
+        public string PassWord { get; set; }       
         /// <summary>
-        /// 用户名
+        /// 最后一次登录时间
         /// </summary>
-        public string UserName { get; set; }
-        /// <summary>
-        /// 年龄
-        /// </summary>
-        public int Age { get; set; }
-        /// <summary>
-        /// 性别
-        /// </summary>
-        public int Gender { get; set; }
-        /// <summary>
-        /// 地址
-        /// </summary>
-        public string Address { get; set; }
+        public DateTime LastLoginTime { get; set; }
     }
 }

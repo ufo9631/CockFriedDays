@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class BaseModel
+    public class ShoppingCarts : BaseModel
     {
         /// <summary>
-        /// Id
+        /// 商品Id
         /// </summary>
-        public int Id { get; set; }
+        public int ProductId { get; set; }
         /// <summary>
-        /// 创建时间
+        /// 数量
         /// </summary>
-        public DateTime CreateTime { get; set; }
+        public int Quantity { get; set; }
+
     }
 }
