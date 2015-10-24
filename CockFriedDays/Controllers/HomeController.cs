@@ -14,5 +14,10 @@ using System.Web.Mvc;namespace CockFriedDays.Controllers
         {
  
         }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
     }
 }
