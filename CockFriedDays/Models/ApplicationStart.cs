@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +21,12 @@ namespace CockFriedDays.Models
 
             var databll = Assembly.Load("BLL");
             builder.RegisterAssemblyTypes(databll).Where(a => a.FullName.Contains("BLL")).AsImplementedInterfaces();
-
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterInstance(new DbEntities()).As<DbEntities>();
             var contain = builder.Build();
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(contain));
 
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(contain));
+         
         }
     }
 }
