@@ -10,7 +10,12 @@ namespace DAL
 {
     public class BaseDAL<T> : IBaseDAL<T> where T : class,new()
     {
-        DbEntities dbContext = new DbEntities();
+      public DbEntities dbContext { get; set; }
+       
+        public BaseDAL()
+            {
+            dbContext = new DbEntities();
+            }
         public IQueryable<T> GetEntityList(System.Linq.Expressions.Expression<Func<T, bool>> whereLamobda)
         {
             return dbContext.Set<T>().Where(whereLamobda);
