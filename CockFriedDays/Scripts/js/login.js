@@ -33,6 +33,7 @@
                     $('.alert-error', $('.login-form')).show();
                 },
 
+
                 highlight: function (element) { // hightlight error inputs
                     $(element)
 	                    .closest('.control-group').addClass('error'); // set error class to the control group
@@ -120,7 +121,7 @@
                 jQuery('.login-form').show();
                 jQuery('.forget-form').hide();
             });
-
+            //用户注册
             $('.register-form').validate({
                 errorElement: 'label', //default input error message container
                 errorClass: 'help-inline', // default input error message class
@@ -150,17 +151,17 @@
                         required: "请阅读并同意CockFriedDays注册条款。"
                     },
                     username: {
-                        required:"用户名不能为空。"
+                        required: "用户名不能为空。"
                     },
-                    password:{
-                        required:"密码不能为空。"
+                    password: {
+                        required: "密码不能为空。"
                     },
                     rpassword: {
-                        equalTo:"确认密码错误，请重新确认。"
+                        equalTo: "确认密码错误，请重新确认。"
                     },
-                    email:{
+                    email: {
                         required: "电子邮箱不能为空。",
-                        email:"邮箱格式不正确，请重新确认。"
+                        email: "邮箱格式不正确，请重新确认。"
 
                     }
 
@@ -187,9 +188,8 @@
                         error.addClass('help-small no-left-padding').insertAfter(element.closest('.input-icon'));
                     }
                 },
-
                 submitHandler: function (form) {
-                    window.location.href = "index.html";
+                    form.submit();
                 }
             });
 
