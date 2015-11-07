@@ -8,15 +8,15 @@ namespace CockFriedDays.Areas.Admin
         {
             get 
             {
-                return "Merchant";
+                return "Admin";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Merchant",
-                "Merchant/{controller}/{action}/{id}",
+                "Admin",
+                "Admin/{controller}/{action}/{id}",
                 new { action = "Login", id = UrlParameter.Optional, Controller="Admin" }
             );
         }

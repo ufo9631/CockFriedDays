@@ -1,17 +1,80 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    Layout = "~/Views/Sharp/_LayoutPage.cshtml";
 }
 
-<!DOCTYPE html>
+@section Head{
+    <script src="~/Scripts/js/jquery.validate.min.js"></script>
+    <style type="text/css">
+        .div-login {
+            width: 450px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+    </style>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Login</title>
-</head>
-<body>
-    <div> 
+    <script type="text/javascript">
+
+
+
+
+        $(function () {
+            $(".login-form").validate({
+                errorElement: 'label',
+                focusInvalid: false,
+                rules: {
+                    userName: {
+                        required: true
+                    },
+                    passWord: {
+                        required: true
+                    }
+                },
+                messages: {
+                    userName: {
+                        required: "用户名不能为空"
+                    },
+                    passWord: {
+                        required: "密码不能为空"
+                    }
+                },
+                submitHandler: function (form) {   //表单提交句柄,为一回调函数，带一个参数：form
+                    alert("提交表单");
+                    form.submit();   //提交表单
+                }
+            });
+        });
+    </script>
+
+}
+
+
+<form class="form-horizontal login-form" method="post" action="@Url.Action("Login","Users")">
+    <div class="div-login">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="userName" placeholder="用户名">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">密&nbsp;码</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" name="passWord" placeholder="密码">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> 记住账号
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">登录</button>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</form>

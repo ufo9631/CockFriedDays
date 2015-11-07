@@ -54,7 +54,6 @@
     <Compile Include="ShoppingCarts.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="UsersInfo.cs" />
-    <Compile Include="Enum\UserType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

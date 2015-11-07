@@ -203,7 +203,7 @@
         <!-- END FORGOT PASSWORD FORM -->
         <!-- BEGIN REGISTRATION FORM -->
 
-        <form class="form-vertical register-form" action="index.html">
+        <form class="form-vertical register-form" action="@Url.Action("Admin", "Register", new { area = "admin" })">
 
             <h3 class="">注册</h3>
 
@@ -289,7 +289,7 @@
 
                     <label class="checkbox">
 
-                        <input type="checkbox" name="tnc" /> 我接受 <a href="#">CockFriedDays注册条款</a>
+                        <input type="checkbox" name="tnc" value="1" /> 我接受 <a href="#">CockFriedDays注册条款</a>
 
                     </label>
 

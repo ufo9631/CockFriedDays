@@ -100,6 +100,5 @@ namespace Common
             }
             return sBuilder.ToString();
         }
-
     }
 }
