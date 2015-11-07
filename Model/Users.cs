@@ -21,6 +21,10 @@ namespace Model
         /// </summary>
         public string PassWord { get; set; }       
         /// <summary>
+        /// 用户类型
+        /// </summary>
+        public UserType UserType { get; set; }
+        /// <summary>
         /// 最后一次登录时间
         /// </summary>
         public DateTime LastLoginTime { get; set; }
