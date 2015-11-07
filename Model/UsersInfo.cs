@@ -31,5 +31,13 @@ namespace Model
         /// 地址
         /// </summary>
         public string Address { get; set; }
+        /// <summary>
+        /// Email
+        /// </summary>
+        public string Email { get; set; }
+        /// <summary>
+        /// 手机号码
+        /// </summary>
+        public string Mobile { get; set; }
     }
 }
