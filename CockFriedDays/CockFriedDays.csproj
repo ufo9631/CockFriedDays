@@ -372,11 +372,6 @@
     <Content Include="Content\image\glyphiconshalflings-regular.woff" />
     <Content Include="Content\image\js" />
     <Content Include="Content\image\Thumbs.db" />
-    <Content Include="Areas\Merchant\Views\web.config" />
-    <Content Include="Areas\Merchant\Views\Admin\Login.cshtml" />
-    <Content Include="Areas\Merchant\Views\Shared\AdminLayout.cshtml" />
-    <Content Include="Areas\Merchant\Views\Admin\Index.cshtml" />
-    <Content Include="Areas\Consumer\Views\web.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -499,9 +494,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\Consumer\ConsumerAreaRegistration.cs" />
-    <Compile Include="Areas\Merchant\MerchantAreaRegistration.cs" />
-    <Compile Include="Areas\Merchant\Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -528,10 +520,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Consumer\Controllers\" />
-    <Folder Include="Areas\Consumer\Models\" />
-    <Folder Include="Areas\Consumer\Views\Shared\" />
-    <Folder Include="Areas\Merchant\Models\" />
+    <Folder Include="Areas\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
