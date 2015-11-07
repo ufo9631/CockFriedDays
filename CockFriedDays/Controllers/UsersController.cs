@@ -20,5 +20,10 @@ namespace CockFriedDays.Controllers
             List<Users> userList = UsersBLL.GetEntityList(p => p.Id == 1).ToList();
             return View();
         }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
     }
 }
