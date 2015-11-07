@@ -105,6 +105,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\about-us.css" />
     <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\blog.css" />
@@ -354,6 +358,7 @@
     <Content Include="Content\image\xing.png" />
     <Content Include="Content\image\yahoo.png" />
     <Content Include="Content\image\youtube.png" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\image\css" />
     <Content Include="Content\image\fontawesome-webfont.eot" />
@@ -367,11 +372,20 @@
     <Content Include="Content\image\glyphiconshalflings-regular.woff" />
     <Content Include="Content\image\js" />
     <Content Include="Content\image\Thumbs.db" />
-    <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Admin\Login.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\AdminLayout.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Merchant\Views\web.config" />
+    <Content Include="Areas\Merchant\Views\Admin\Login.cshtml" />
+    <Content Include="Areas\Merchant\Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Areas\Merchant\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Consumer\Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\js\additional-methods.min.js" />
@@ -485,8 +499,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Consumer\ConsumerAreaRegistration.cs" />
+    <Compile Include="Areas\Merchant\MerchantAreaRegistration.cs" />
+    <Compile Include="Areas\Merchant\Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -500,6 +515,10 @@
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Users\Login.cshtml" />
+    <Content Include="Views\Sharp\_LayoutPage.cshtml" />
+    <Content Include="Views\Users\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -509,7 +528,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Consumer\Controllers\" />
+    <Folder Include="Areas\Consumer\Models\" />
+    <Folder Include="Areas\Consumer\Views\Shared\" />
+    <Folder Include="Areas\Merchant\Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
