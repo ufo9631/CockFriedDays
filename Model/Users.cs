@@ -15,6 +15,7 @@ namespace Model
         /// <summary>
         /// 用户登录名
         /// </summary>
+       
         public string LoginCode { get; set; }
         /// <summary>
         /// 密码
