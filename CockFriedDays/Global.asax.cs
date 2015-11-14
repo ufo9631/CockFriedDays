@@ -1,7 +1,9 @@
 ﻿using CockFriedDays.Models;
+using DAL;
 using log4net.Config;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -19,7 +21,7 @@ namespace CockFriedDays
             ApplicationStart.Dependency();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             LoadLog4netConfig();
-
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DbEntities>());
         }
         public class FilterConfig
         {

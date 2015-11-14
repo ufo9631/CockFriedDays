@@ -12,10 +12,12 @@ namespace DAL
     {
       public DbEntities dbContext { get; set; }
        
+       
         public BaseDAL()
             {
             dbContext = new DbEntities();
-            }
+            dbContext.Database.Initialize(true);
+        }
         public IQueryable<T> GetEntityList(System.Linq.Expressions.Expression<Func<T, bool>> whereLamobda)
         {
             return dbContext.Set<T>().Where(whereLamobda);

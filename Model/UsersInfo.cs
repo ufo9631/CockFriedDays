@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace Model
     /// <summary>
     /// 用户信息表
     /// </summary>
+    [Table("UsersInfo")]
     public class UsersInfo : BaseModel
     {
         /// <summary>

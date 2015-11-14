@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace Model
     /// <summary>
     /// 商品类别表
     /// </summary>
+    [Table("Category")]
     public class Category : BaseModel
     {
         /// <summary>

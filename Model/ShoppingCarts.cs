@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Model
 {
+    /// <summary>
+    /// 购物车
+    /// </summary>
+   [Table("ShoppingCarts")]
     public class ShoppingCarts : BaseModel
     {
         /// <summary>
