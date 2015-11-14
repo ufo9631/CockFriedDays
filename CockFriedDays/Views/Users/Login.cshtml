@@ -1,20 +1,20 @@
 ﻿@{
     Layout = null;
 }
-
-<!DOCTYPE html>
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Login</title>
+    <script src="~/Scripts/js/jquery-1.10.1.min.js"></script>
+    <script src="~/Scripts/js/jquery.validate.min.js"></script>
     <style>
         .form-login {
             width: 300px;
-            height: 359px;
-            border: 1px solid red;
+            height: 266px;
+            margin-top: 50px;
             padding: 20px;
+            background-color: white;
         }
 
         .div-register {
@@ -34,7 +34,7 @@
         }
 
         .div-register b {
-            background: url("/Content/image/bg/pwd-icons-new.png") -100px -75px no-repeat;
+            background: url("img/pwd-icons-new.png") -100px -75px no-repeat;
             display: inline-block;
             width: 20px;
             height: 20px;
@@ -67,7 +67,7 @@
 
 
         .div-msgContent b {
-            background: url("/Content/image/bg/pwd-icons-new.png") -104px -22px no-repeat;
+            background: url("img/pwd-icons-new.png") -104px -22px no-repeat;
             display: inline-block;
             width: 12px;
             height: 18px;
@@ -119,24 +119,22 @@
         .div-box {
             width: 1190px;
             margin: 0 auto;
-            border: 1px solid red;
         }
 
         .div-top {
-            height: 100px;
+            height: 70px;
         }
 
         .div-content {
         }
 
         .div-con-left {
-            border: 1px solid black;
             float: left;
         }
 
         .w900 {
             width: 846px;
-            height: 400px;
+            height: 460px;
         }
 
         .w300 {
@@ -147,7 +145,6 @@
         .div-con-right {
             width: 200px;
             height: 400px;
-            border: 1px solid green;
             float: left;
         }
 
@@ -158,29 +155,77 @@
 
         .div-con-button {
             height: 150px;
-            border: 1px solid red;
+        }
+
+        .div-color-red {
+            background-color: #EE2843;
         }
 
         .div-back {
             width: 100%;
-            height: 400px;
+            height: 460px;
+        }
+
+        .div-adv {
+            width: 594px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .lab-msg {
+            position: relative;
+            left: 100px;
+            border: 1px solid #ffe57d;
+            background-color: #fff6d2;
+            color: #666;
+            font-size: 12px;
         }
     </style>
-    <script src="~/Scripts/js/jquery-1.10.1.min.js"></script>
-    <script src="~/Scripts/js/jquery.validate.min.js"></script>
     <script>
 
+        function login() {
+            $(".form-login").validate({
+                errorElement: "label",
+                focusInvalid: false,
+                rules: {
+                    loginName: {
+                        required: true
+                    },
+                    passWord: {
+                        required: true
+                    }
+                },
+                messages: {
+                    loginName: {
+                        required: "用户名不能为空"
+                    },
+                    passWord: {
+                        required: "密码不能为空"
+                    }
+                },
+                submitHandler: function (form) {
+
+                }
+            });
+        }
+
+        $(function () {
+            login();
+        });
     </script>
 </head>
 <body>
-    <form action="/" method="post">
-        <div>
-            <div class="div-box div-top">
-
-            </div>
-            <div class="div-back">
-                <div class="div-box div-content div-clear">
+    <form action="/" method="post" class="form-login">
+        <div class="div-box div-top">
+            top
+        </div>
+        <div class="div-back div-color-red">
+            <div>
+                <div class="div-box div-content div-clear div-color-red">
                     <div class="div-con-left w900">
+                        <div class="div-adv">
+                            <img src="img/login-adv.jpg">
+                        </div>
                     </div>
                     <div class="div-con-left w300">
                         <div class="form-login">
@@ -201,16 +246,16 @@
                             </div>
                             <div class="div-uname">
                                 <label>用户名</label>
-                                <input type="text" placeholder="账号" class="txt" />
+                                <input type="text" placeholder="账号" class="txt" name="loginName" />
                             </div>
                             <div class="div-uname">
                                 <label>密&nbsp;码</label>
-                                <input type="password" placeholder="密码" class="txt" />
+                                <input type="password" placeholder="密码" class="txt" name="passWord" />
                             </div>
                             <div class="div-check div-uname">
                                 <div class="div-left">
                                     <span>
-                                        <input type="checkbox" /><label>记住密码</label>
+                                        <input type="checkbox" name="remember" /><label>记住密码</label>
                                     </span>
                                 </div>
                                 <div class="div-right">
@@ -218,16 +263,20 @@
                                 </div>
                             </div>
                             <div class="div-button">
-                                <a href="#"><h3>登录</h3></a>
+                                @*<a href="#" name="subLogin"><h3>登录</h3></a>*@
+                                <input type="submit" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="div-con-button div-box">
 
-            </div>
         </div>
+
+        <div class="div-con-button div-box">
+
+        </div>
+
     </form>
 </body>
 </html>
