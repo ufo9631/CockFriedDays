@@ -28,7 +28,7 @@ namespace BLL
 
         public bool EditEntity(T entity)
         {
-            return DAL.AddEntity(entity);
+            return DAL.EditEntity(entity);
         }
 
         public bool DeleteEntity(T entity)

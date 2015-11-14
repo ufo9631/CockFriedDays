@@ -1,28 +1,194 @@
 ﻿@{
-    Layout = "~/Views/Sharp/_LayoutPage.cshtml";
+    Layout = null;
 }
-
-@section Head{
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Login</title>
+    <script src="~/Scripts/js/jquery-1.10.1.min.js"></script>
     <script src="~/Scripts/js/jquery.validate.min.js"></script>
-    <style type="text/css">
-        .div-login {
-            width: 450px;
+    <style>
+        .form-login {
+            width: 300px;
+            height: 266px;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .div-register {
+            float: right;
+        }
+
+        h3 {
+            display: inline;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .div-register a {
+            color: red;
+        }
+
+        .div-register b {
+            background: url("img/pwd-icons-new.png") -100px -75px no-repeat;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 5px;
+        }
+
+        .div-msg {
+            border: 1px solid #ffe57d;
+            height: 27px;
+            margin-top: 10px;
+            background-color: #fff6d2;
+            color: #666;
+            line-height: 18px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .txt {
+            height: 30px;
+            line-height: 30px;
+            width: 233px;
+            font-size: 15px;
+            padding-left: 5px;
+        }
+
+        .div-uname {
+            margin-top: 10px;
+        }
+
+
+        .div-msgContent b {
+            background: url("img/pwd-icons-new.png") -104px -22px no-repeat;
+            display: inline-block;
+            width: 12px;
+            height: 18px;
+            position: relative;
+            top: 3px;
+            left: 4px;
+        }
+
+        .div-msgContent label {
+            padding-left: 5px;
+        }
+
+
+
+        .div-left {
+            float: left;
+        }
+
+            .div-left span {
+                cursor: pointer;
+            }
+
+        .div-right {
+            float: right;
+        }
+
+        .div-check {
+            font-size: 12px;
+        }
+
+        .div-button {
+            text-align: center;
+            clear: left;
+            padding-top: 10px;
+        }
+
+            .div-button a {
+                display: block;
+                width: 250px;
+                height: 30px;
+                color: red;
+                line-height: 30px;
+                margin: 0 auto;
+                background-color: #e4393c;
+                color: #ffffff;
+                cursor: pointer;
+            }
+
+        .div-box {
+            width: 1190px;
             margin: 0 auto;
-            margin-top: 100px;
+        }
+
+        .div-top {
+            height: 70px;
+        }
+
+        .div-content {
+        }
+
+        .div-con-left {
+            float: left;
+        }
+
+        .w900 {
+            width: 846px;
+            height: 460px;
+        }
+
+        .w300 {
+            width: 340px;
+            height: 400px;
+        }
+
+        .div-con-right {
+            width: 200px;
+            height: 400px;
+            float: left;
+        }
+
+        .div-clear {
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        .div-con-button {
+            height: 150px;
+        }
+
+        .div-color-red {
+            background-color: #EE2843;
+        }
+
+        .div-back {
+            width: 100%;
+            height: 460px;
+        }
+
+        .div-adv {
+            width: 594px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .lab-msg {
+            position: relative;
+            left: 100px;
+            border: 1px solid #ffe57d;
+            background-color: #fff6d2;
+            color: #666;
+            font-size: 12px;
         }
     </style>
+    <script>
 
-    <script type="text/javascript">
-
-
-
-
-        $(function () {
-            $(".login-form").validate({
-                errorElement: 'label',
+        function login() {
+            $(".form-login").validate({
+                errorElement: "label",
                 focusInvalid: false,
                 rules: {
-                    userName: {
+                    loginName: {
                         required: true
                     },
                     passWord: {
@@ -30,51 +196,87 @@
                     }
                 },
                 messages: {
-                    userName: {
+                    loginName: {
                         required: "用户名不能为空"
                     },
                     passWord: {
                         required: "密码不能为空"
                     }
                 },
-                submitHandler: function (form) {   //表单提交句柄,为一回调函数，带一个参数：form
-                    alert("提交表单");
-                    form.submit();   //提交表单
+                submitHandler: function (form) {
+
                 }
             });
+        }
+
+        $(function () {
+            login();
         });
     </script>
-
-}
-
-
-<form class="form-horizontal login-form" method="post" action="@Url.Action("Login","Users")">
-    <div class="div-login">
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" name="userName" placeholder="用户名">
-            </div>
+</head>
+<body>
+    <form action="/" method="post" class="form-login">
+        <div class="div-box div-top">
+            top
         </div>
-        <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 control-label">密&nbsp;码</label>
-            <div class="col-sm-10">
-                <input type="password" class="form-control" name="passWord" placeholder="密码">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> 记住账号
-                    </label>
+        <div class="div-back div-color-red">
+            <div>
+                <div class="div-box div-content div-clear div-color-red">
+                    <div class="div-con-left w900">
+                        <div class="div-adv">
+                            <img src="img/login-adv.jpg">
+                        </div>
+                    </div>
+                    <div class="div-con-left w300">
+                        <div class="form-login">
+
+                            <div>
+                                <h3>0dian 会员</h3>
+                                <div class="div-register">
+                                    <b></b>
+                                    <a href="#"> 注册</a>
+                                </div>
+                            </div>
+                            <div class="div-msg">
+                                <div class="div-msgContent">
+                                    <b></b>
+                                    <label>公共场所不建议自动登录，以防账号丢失</label>
+                                </div>
+
+                            </div>
+                            <div class="div-uname">
+                                <label>用户名</label>
+                                <input type="text" placeholder="账号" class="txt" name="loginName" />
+                            </div>
+                            <div class="div-uname">
+                                <label>密&nbsp;码</label>
+                                <input type="password" placeholder="密码" class="txt" name="passWord" />
+                            </div>
+                            <div class="div-check div-uname">
+                                <div class="div-left">
+                                    <span>
+                                        <input type="checkbox" name="remember" /><label>记住密码</label>
+                                    </span>
+                                </div>
+                                <div class="div-right">
+                                    <a href="#">忘记密码？</a>
+                                </div>
+                            </div>
+                            <div class="div-button">
+                                @*<a href="#" name="subLogin"><h3>登录</h3></a>*@
+                                <input type="submit" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">登录</button>
-            </div>
+
+        <div class="div-con-button div-box">
+
         </div>
-    </div>
-</form>
+
+    </form>
+</body>
+</html>
