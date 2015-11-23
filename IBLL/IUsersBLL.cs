@@ -9,5 +9,6 @@ namespace IBLL
 {
     public interface IUsersBLL:IBaseBLL<Users>
     {
+        int IsExistLoginCode(string loginCode);
     }
 }

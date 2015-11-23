@@ -9,6 +9,6 @@ namespace IDAL
 {
     public interface IUsersDAL : IBaseDAL<Users>
     {
-
+        int IsExistLoginCode(string loginCode);
     }
 }

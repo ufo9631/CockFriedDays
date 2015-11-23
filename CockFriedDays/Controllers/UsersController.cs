@@ -44,7 +44,7 @@ namespace CockFriedDays.Controllers
                 ModelState.AddModelError("error", "提交的不是有效的数据");
             }
 
-            return View();
+            return View(model);
         }
 
         public ActionResult Login()

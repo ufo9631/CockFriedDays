@@ -17,7 +17,7 @@ namespace DAL
             {
             dbContext = new DbEntities();
             dbContext.Database.Initialize(true);
-        }
+            }
         public IQueryable<T> GetEntityList(System.Linq.Expressions.Expression<Func<T, bool>> whereLamobda)
         {
             return dbContext.Set<T>().Where(whereLamobda);
@@ -41,7 +41,7 @@ namespace DAL
         public bool AddEntity(T entity)
         {
             dbContext.Entry<T>(entity).State = EntityState.Added;
-            return dbContext.SaveChanges()>0;
+            return dbContext.SaveChanges() > 0;
         }
 
         public bool EditEntity(T entity)

@@ -10,6 +10,11 @@ namespace DAL
 {
     public class UsersDAL : BaseDAL<Users>, IUsersDAL
     {
+        public int IsExistLoginCode(string loginCode)
+        {
+        int count=  dbContext.Users.Where(p => p.LoginCode.Equals(loginCode)).Count();
 
+            return count;
+        }
     }
 }

@@ -22,5 +22,10 @@ namespace BLL
       {
           DAL = UsersDAL;
       }
+
+        public int IsExistLoginCode(string loginCode)
+        {
+            return UsersDAL.IsExistLoginCode(loginCode);
+        }
     }
 }
